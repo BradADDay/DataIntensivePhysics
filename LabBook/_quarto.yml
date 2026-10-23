@@ -1,0 +1,52 @@
+project:
+  type: book
+
+bookdown::gitbook:
+   
+book:
+  title: "Data Intensive Physics - Project Notes"
+  author: "Bradley Day"
+  downloads:
+    - pdf
+  chapters:
+    - index.qmd
+    - DataResearch.qmd
+    - references.qmd
+
+bibliography: references.bib
+csl: american-physical-society-et-al.csl
+lightbox: true
+
+format:
+  html:
+    code-fold: true
+    code-overflow: wrap
+    html-math-method: mathjax
+    include-in-header:
+      - text: |
+          <script>
+          window.MathJax = {
+            loader: {
+              load: ['[tex]/boldsymbol', '[tex]/physics']
+            },
+            tex: {
+              packages: {
+                '[+]': ['boldsymbol', 'physics']
+              }
+            }
+          };
+          </script>
+  pdf:
+    include-in-header:
+      - text: |
+          \usepackage{amsmath, gensymb, physics}
+          \usepackage[margin=15mm]{geometry}
+          \usepackage{fvextra}
+          \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+
+
+jupyter: python3
+
+theme:
+    light: flatly
+    dark: darkly

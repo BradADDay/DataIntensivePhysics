@@ -1,0 +1,158 @@
+# Data Layout & Specifics
+
+## MER Data Products
+
+```
+# 
+EUC_MER_FINAL-CAT_TILE102159484-EF6D85_20241026T003047.133877Z_00.00.fits
+
+# Cropped Images of Sources
+EUC_MER_FINAL-CUTOUTS-CAT_TILE102159484-73BCF1_20241025T145359.184204Z_00.00.fits
+
+# Galaxy Morphologies
+EUC_MER_FINAL-MORPH-CAT_TILE102159484-AE979F_20241026T003045.182961Z_00.00.fits
+```
+
+The morphology file contains probabilities for different features, similar to those for the Galaxy zoo project. could be used for a cnn based system??
+
+```
+CAT
+Filename: /home/brad/Downloads/DIP_2026/EUC_MER_FINAL-CAT_TILE102159484-EF6D85_20241026T003047.133877Z_00.00.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU       4   ()      
+  1  EUC_MER__FINAL_CATALOG    1 BinTableHDU   1460   111422R x 469C   [K, D, D, D, D, K, I, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, J, J, J, J, J, J, J, J, J, J, J, J, J, J, J, J, J, J, J, J, J, J, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, I, K, K, E, I, I, I, I, E, I, E, I, E, E, I, E, E, J, E, E, E, E, E, E, E, E, E, E, E, K, E]
+None
+
+CUTOUT
+Filename: /home/brad/Downloads/DIP_2026/EUC_MER_FINAL-CUTOUTS-CAT_TILE102159484-73BCF1_20241025T145359.184204Z_00.00.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU       4   ()      
+  1  EUC_MER__CUTOUTS_CORNERS    1 BinTableHDU     92   111422R x 25C   [K, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, K, K, E]   
+None
+
+MORPH
+Filename: /home/brad/Downloads/DIP_2026/EUC_MER_FINAL-MORPH-CAT_TILE102159484-AE979F_20241026T003045.182961Z_00.00.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU       4   ()      
+  1  EUC_MER__FINAL_MORPHOLOGY_CATALOG    1 BinTableHDU    338   111422R x 104C   [K, E, E, E, E, E, E, E, E, E, E, E, J, K, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, J, K, E, E, J, K, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, I, I, I, I, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, I, E, E]   
+None
+```
+
+## SPE Data Products
+
+```
+# Spectral line measurements (line name, value, etc for different objects)
+EUC_SPE_WIDE-CAT-LIN-102159484_N_20241110T054343.637093Z_00.00.fits
+
+# Parameters required for building spectrum model of each object
+EUC_SPE_WIDE-CAT-MOD-102159484_N_20241110T054509.870865Z_00.00.fits
+
+# Photometric redshift estimation
+EUC_SPE_WIDE-CAT-Z-102159484_N_20241110T054253.801351Z_00.00.fits
+```
+
+```
+SPELIN
+Filename: /home/brad/Downloads/DIP_2026/EUC_SPE_WIDE-CAT-LIN-102159484_N_20241110T054343.637093Z_00.00.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      12   ()      
+  1  SPE_LINE_FEATURES_CAT    1 BinTableHDU     77   849556R x 34C   [K, I, I, I, 12A, I, E, E, E, E, E, E, E, E, E, E, E, E, D, D, I, E, E, E, E, E, E, E, E, E, D, D, I, E]   
+  2  SPE_ATOMIC_INDICES    1 BinTableHDU     21   641880R x 6C   [K, I, 12A, E, E, E]   
+  3  SPE_MOLECULAR_INDICES    1 BinTableHDU     21   106980R x 6C   [K, I, 12A, E, E, E]   
+  4  SPE_CONTINUUM_FEATURES    1 BinTableHDU     21   35660R x 6C   [K, I, 12A, E, E, E]   
+None
+
+SPEMOD
+WARNING: The following header keyword is invalid or follows an unrecognized non-standard convention:
+ [astropy.io.fits.card]
+Filename: /home/brad/Downloads/DIP_2026/EUC_SPE_WIDE-CAT-MOD-102159484_N_20241110T054509.870865Z_00.00.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      12   ()      
+  1  SPE_LINES_CATALOG    1 BinTableHDU     17   2148096R x 4C   [I, E, 8A, A]   
+  2  SPE_GALAXY_MODELS    1 BinTableHDU     87   77044R x 21C   [K, I, E, 48A, E, I, E, 48A, E, E, E, 60I, 60E, E, E, E, E, E, E, E, E]   
+  3  SPE_STAR_MODELS    1 BinTableHDU     25   28816R x 8C   [K, I, E, 48A, E, E, E, E]   
+  4  SPE_QSO_MODELS    1 BinTableHDU     51   73736R x 21C   [K, I, E, 48A, E, I, E, 48A, E, E, E, 60I, 60E, E, E, E, E, E, E, E, E]   
+None
+
+SPEZ
+Filename: /home/brad/Downloads/DIP_2026/EUC_SPE_WIDE-CAT-Z-102159484_N_20241110T054253.801351Z_00.00.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      12   ()      
+  1  SPE_QUALITY    1 BinTableHDU     59   111422R x 25C   [K, I, I, K, K, K, K, K, K, K, K, K, K, 8A, E, E, I, I, I, I, I, I, I, I, I]   
+  2  SPE_CLASSIFICATION    1 BinTableHDU     19   15713R x 5C   [K, E, E, E, 8A]   
+  3  SPE_GALAXY_CANDIDATES    1 BinTableHDU     33   77044R x 12C   [K, I, E, E, E, E, 48A, E, E, E, E, 80E]   
+  4  SPE_STAR_CANDIDATES    1 BinTableHDU     25   28816R x 8C   [K, I, E, E, E, E, 48A, E]   
+  5  SPE_QSO_CANDIDATES    1 BinTableHDU     33   73736R x 12C   [K, I, E, E, E, E, 48A, E, E, E, E, 80E]   
+None
+```
+
+## Classifications from OU-PHZ
+
+```
+# Spectral Energy Distributions
+EUC_PHZ_GALAXYSED__20241120T003959.957136Z_00.00.fits
+EUC_PHZ_STARSED__20241120T003936.665995Z_00.00.fits
+
+# Classifications
+EUC_PHZ_PHZCAT__20241120T003850.158262Z_00.00.fits
+```
+
+```
+GSED
+Filename: /home/brad/Downloads/DIP_2026/EUC_PHZ_GALAXYSED__20241120T003959.957136Z_00.00.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU       4   ()      
+  1                1 BinTableHDU    248   111422R x 120C   [K, K, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E]   
+None
+
+PHZCAT
+Filename: /home/brad/Downloads/DIP_2026/EUC_PHZ_PHZCAT__20241120T003850.158262Z_00.00.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU       4   ()      
+  1  PHOTOZ CATALOG    1 BinTableHDU    145   111422R x 61C   [K, 601D, E, 2E, 2E, 2E, E, E, D, E, J, J, J, J, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, J, J, J, D, 4D, D]   
+  2  ZERO_POINT    1 BinTableHDU     14   19R x 2C   [11A, D]   
+None
+
+SSED
+Filename: /home/brad/Downloads/DIP_2026/EUC_PHZ_STARSED__20241120T003936.665995Z_00.00.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU       4   ()      
+  1                1 BinTableHDU    248   111422R x 120C   [K, K, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E, E]   
+None
+```
+
+## Mosaic Images
+
+```
+# Mosaic images from different filters
+EUC_MER_BGSUB-MOSAIC-NIR-H_TILE102159484-39CF67_20241024T214009.099906Z_00.00.fits
+EUC_MER_BGSUB-MOSAIC-NIR-J_TILE102159484-C026DB_20241024T213141.416722Z_00.00.fits
+EUC_MER_BGSUB-MOSAIC-NIR-Y_TILE102159484-A9CCA7_20241024T221227.957725Z_00.00.fits
+EUC_MER_BGSUB-MOSAIC-VIS_TILE102159484-116033_20241025T015934.885975Z_00.00.fits
+```
+
+```
+NIRH
+Filename: /home/brad/Downloads/DIP_2026/EUC_MER_BGSUB-MOSAIC-NIR-H_TILE102159484-39CF67_20241024T214009.099906Z_00.00.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      48   (19200, 19200)   float32   
+None
+
+NIRJ
+Filename: /home/brad/Downloads/DIP_2026/EUC_MER_BGSUB-MOSAIC-NIR-J_TILE102159484-C026DB_20241024T213141.416722Z_00.00.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      48   (19200, 19200)   float32   
+None
+
+NIRY
+Filename: /home/brad/Downloads/DIP_2026/EUC_MER_BGSUB-MOSAIC-NIR-Y_TILE102159484-A9CCA7_20241024T221227.957725Z_00.00.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      48   (19200, 19200)   float32   
+None
+
+VIS
+Filename: /home/brad/Downloads/DIP_2026/EUC_MER_BGSUB-MOSAIC-VIS_TILE102159484-116033_20241025T015934.885975Z_00.00.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      48   (19200, 19200)   float32   
+None
+```
