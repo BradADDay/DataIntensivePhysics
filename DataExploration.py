@@ -8,10 +8,11 @@ from astropy.wcs import WCS
 from astropy.coordinates import SkyCoord
 from astropy.units import Quantity
 
-def GetCutout(image, cutout, wcs, size=100):
+def GetCutout(image, cutout):
     """
     Get the cropped image from a cutout entry.
     """
+
     # Taking the centre of the cutout and entering as a SkyCoord
     centre = SkyCoord(cutout[1], cutout[2], unit="deg")
 
@@ -19,9 +20,25 @@ def GetCutout(image, cutout, wcs, size=100):
     size = Quantity([abs(cutout[4]-cutout[8]), abs(cutout[3]-cutout[5])], unit="deg")
 
     # Cropping the image
-    croppedImg = Cutout2D(image, centre, size, wcs=wcs)
+    croppedImg = Cutout2D(image[0].data, centre, size, wcs=WCS(image[0].header))
 
     return croppedImg
+
+def ShowCutout(image, cutout):
+    """
+    Plot a given cutout from the image
+    """
+
+    # Cropping the image to the cutout box
+    croppedImg = GetCutout(hdulImage, cutout)
+
+    # Plotting the cropped image
+    fig, ax = plt.subplots(subplot_kw=dict(projection=croppedImg.wcs))
+    ax.imshow(croppedImg.data, cmap="plasma", norm=LogNorm())
+    ax.set_xlabel("Right Ascension")
+    ax.set_ylabel("Declination")
+    
+    return fig, ax
 
 # Dictionary containing all data files
 DataDict = {
@@ -41,26 +58,14 @@ DataDict = {
 }
 
 # Which image to use
-filt = "NIRZ"
+filt = "NIRY"
 
 # Getting the cutouts and image
 hdulCutouts = fits.open(f"/home/brad/Downloads/DIP_2026/{DataDict["CUTOUT"]}")
 hdulImage  = fits.open(f"/home/brad/Downloads/DIP_2026/{DataDict[filt]}")
 
-# Getting the world coordinate system
-wcs = WCS(hdulImage[0].header)
-
 # Looping through the cutouts
-for cutout in hdulCutouts[1].data[0:2]:
+for cutout in hdulCutouts[1].data[0:10]:
     
-    # Cropping the image to the cutout box
-    croppedImg = GetCutout(hdulImage[0].data, cutout, wcs, 100)
-
-    # Plotting the cropped image
-    fig, ax = plt.subplots(subplot_kw=dict(projection=croppedImg.wcs))
-    ax.imshow(croppedImg.data, cmap="plasma", norm=LogNorm())
-    ax.set_xlabel("Right Ascension")
-    ax.set_ylabel("Declination")
-    plt.gca().invert_yaxis()
-    # fig.savefig(f"{filter}.png")
+    fig, ax = ShowCutout(hdulImage, cutout)
     plt.show()
